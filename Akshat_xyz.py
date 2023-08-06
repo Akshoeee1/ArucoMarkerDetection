@@ -7,6 +7,13 @@ marker_dict = aruco.Dictionary_get(aruco.DICT_4X4_50)
 # used this dictionary as it is mentioned in the competition rules that they will display a black and white Aruco Tag using the 4x4_50 tag library on every marker
 
 param_markers = aruco.DetectorParameters_create()
+
+# cap = cv.VideoCapture(0)  for live webcam detection
+# while True:
+#     ret, frame = cap.read()
+#     if not ret:
+#         break
+
 # Loading the sample Image
 frame = cv.imread(r"C:\Users\Akshat\Downloads\arucoMarkerImage.png")
 
@@ -54,6 +61,7 @@ cv.setWindowProperty("frame", cv.WND_PROP_FULLSCREEN, cv.WINDOW_FULLSCREEN)
 
 # Display the image with detected markers
 cv.imshow("frame", frame)
+# cap.release() if live webcam was used
 
 # Wait for a key press
 key = cv.waitKey(0)
